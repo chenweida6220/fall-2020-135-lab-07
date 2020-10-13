@@ -7,7 +7,8 @@
 * GitHub username: Drago12354
 
 * Notes:
-tests.cpp only tests for removeLeadingSpaces() and countChar()
+- tests.cpp only tests for removeLeadingSpaces() and countChar()
+- printOccurencesWithFile() in main.cpp is for testing
 
 
 
