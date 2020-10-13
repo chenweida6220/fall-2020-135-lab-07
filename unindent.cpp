@@ -17,9 +17,5 @@ string removeLeadingSpaces(string line) {
       str += line[i];
     }
   }
-
-  if (checker == false) {
-    str += line;
-  }
   return str;
 }
