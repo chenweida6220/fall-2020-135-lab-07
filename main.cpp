@@ -1,24 +1,52 @@
 #include <iostream>
+#include <fstream>
 #include "unindent.h"
 #include "indent.h"
 using namespace std;
 
 int main() {
+  // Original bad-code file
+  // Printed using ifstream
+  cout << "Bad-Code File" << endl;
+  string line;
+  ifstream readFile;
+  readFile.open("bad-code.cpp");
+  // reading from file
+  while (getline(readFile, line)) {
+    cout << line << endl;
+  }
+  readFile.close();
+
+  cout << "----------" << endl << endl;
+
   // Task A. Removing indentation
-  cout << "       int x = 1;   == " << removeLeadingSpaces("       int x = 1;  ") << endl;
+  // Printed using input redirection
+  cout << "Task A. Removing indentation" << endl << "Please run ./main < bad-code.cpp" << endl;
+  while (getline(cin, line)) {
+    line = removeLeadingSpaces(line);
+    cout << line << endl;
+  }
 
   cout << "----------" << endl << endl;
 
   // Task B. Counting blocks opened and closed by { and }, and adding real indentation
-  cout << "I am a bot!!! == " << countChar("I am a bot!!!", '!') << " of !" << endl;
+  // Printed using ifstream
+  cout << "Task B. Counting blocks opened and closed by { and }, and adding real indentation" << endl;
+  readFile.open("bad-code.cpp");
+  int occurences = 0;
+  while (getline(readFile, line)) {
+    line = removeLeadingSpaces(line);
+    occurences -= countChar(line, '}');
 
-  cout << endl;
+    // print out
+    for (int i = 1; i <= occurences; i++) {
+      cout << "\t";
+    }
+    cout << line << endl;
 
-  cout << "noFormat.txt == " << endl << printOccurencesWithFile("noFormat.txt") << endl;
-
-  cout << endl;
-
-  cout << "noFormat.txt == " << endl << indentedFile("noFormat.txt") << endl;
+    occurences += countChar(line, '{');
+  }
+  readFile.close();
 
   cout << "----------" << endl << endl;
 }

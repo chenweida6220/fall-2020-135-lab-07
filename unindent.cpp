@@ -8,11 +8,11 @@ string removeLeadingSpaces(string line) {
   string str;
   bool checker = false;
   for (int i = 0; i < line.length(); i++) {
-    // once it encounters a non-space, checker will flip to false
+    // once it encounters a non-space, checker will flip to true
     if (!isspace(line[i])) {
       checker = true;
     }
-    // once false, the rest of the string will be added to the str
+    // once true, the rest of the string will be added to the str
     if (checker == true) {
       str += line[i];
     }

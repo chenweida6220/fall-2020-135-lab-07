@@ -8,7 +8,7 @@
 
 * Notes:
 - tests.cpp only tests for removeLeadingSpaces() and countChar()
-- printOccurencesWithFile() in main.cpp is for testing
+- Please run ./main < bad-code.cpp after make main
 
 
 
