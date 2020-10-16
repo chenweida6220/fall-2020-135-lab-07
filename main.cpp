@@ -20,6 +20,7 @@ int main() {
   cout << "----------" << endl << endl;
 
   // Task A. Removing indentation
+  // Run ./main < bad-code.cpp
   // Printed using input redirection
   cout << "Task A. Removing indentation" << endl << "Please run ./main < bad-code.cpp" << endl;
   while (getline(cin, line)) {
